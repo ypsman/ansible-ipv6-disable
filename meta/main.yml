@@ -3,7 +3,7 @@ galaxy_info:
   author: ypsman
   description: disable IPv6 on Debian and Ubuntu Servers
   license: license (GPLv2, CC-BY, etc)
-  min_ansible_version: 1.2
+  min_ansible_version: 2.3
   platforms:
   - name: Ubuntu
     versions: all
