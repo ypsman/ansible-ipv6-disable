@@ -1,7 +1,13 @@
 ---
 # tasks file for base
-- name: disable IPv6
+- name: Load cmdline content
+  slurp:
+    src: "/proc/cmdline"
+  register: cmdline_data
+
+- name: Disable IPv6
   template:
     src: disableipv6.conf.template
     dest: /etc/sysctl.d/10-disable-ipv6.conf
   notify: run sysctl
+  when: 'not "ipv6.disable=1" in cmdline_data.content|b64decode'
