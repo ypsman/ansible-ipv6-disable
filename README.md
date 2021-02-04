@@ -10,4 +10,4 @@ Example Playbook
 
     - hosts: all
       roles:
-        - role: ypsman.ipv6-disable
+        - role: ypsman.ipv6_disable
